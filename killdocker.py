@@ -12,7 +12,7 @@ print("container id:", dpid)
 os.system(f"docker stop {dpid}")
 print("docker process killed")
 
-op = input("kill docker container? (y/n) ")
+op = input("remove docker container? (y/n) ")
 if op == "y":
     os.system(f"docker rm {dpid}")
-    print("docker container killed")
+    print("docker container removed")
