@@ -78,6 +78,9 @@ set(google_api_hdrs
   "${GOOGLEAPIS_HDRS_DIR}/google/api/annotations.pb.h"
   "${GOOGLEAPIS_HDRS_DIR}/google/api/http.pb.h")
 
+# file(GLOB_RECURSE google_api_srcs "${GOOGLEAPIS_HDRS_DIR}/google/api/*.cc")
+# file(GLOB_RECURSE google_api_hdrs "${GOOGLEAPIS_HDRS_DIR}/google/api/*.h")
+
 message(STATUS "[INFO] google_api_srcs: ${google_api_srcs}")
 
 # 添加库
