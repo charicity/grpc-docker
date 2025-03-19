@@ -1,0 +1,8 @@
+Dockerfile
+.dockerignore
+rundocker.py
+builddocker.py
+killdocker.py
+zips/*
+!zips/grpc.tar.gz
+.git/
