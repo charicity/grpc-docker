@@ -56,6 +56,12 @@ RUN git clone --depth=1 https://github.com/googleapis/googleapis.git /usr/local/
 RUN cd /usr/local/include/googleapis && \
   make -j8 LANGUAGE=cpp all
 
+# install rapidjson
+RUN apt install -y rapidjson-dev
+
+# install mysqlconn
+RUN apt install -y libmysqlcppconn-dev
+
 # -----cache end-----
 COPY . .
 RUN rm -r ./zips

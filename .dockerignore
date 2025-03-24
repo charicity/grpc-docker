@@ -6,3 +6,4 @@ killdocker.py
 zips/*
 !zips/grpc.tar.gz
 .git/
+*.sh

@@ -11,10 +11,6 @@ include(./cmake/common.cmake)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED TRUE)
 
-# Proto file
-get_filename_component(hw_proto "./protos/helloworld.proto" ABSOLUTE)
-get_filename_component(hw_proto_path "${hw_proto}" PATH)
-
 # facts
 get_filename_component(GOOGLEAPIS_PB_DIR "/usr/local/include/googleapis" ABSOLUTE)
 get_filename_component(GOOGLEAPIS_HDRS_DIR "/usr/local/include/googleapis/gens" ABSOLUTE)
@@ -99,7 +95,6 @@ target_link_libraries(hw_grpc_proto
   ${_PROTOBUF_LIBPROTOBUF}
 )
 
-# Targets greeter_[async_](client|server)
 foreach(_target
   greeter_client greeter_server)
   add_executable(${_target} "${_target}.cc")
