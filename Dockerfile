@@ -62,6 +62,10 @@ RUN apt install -y rapidjson-dev
 # install mysqlconn
 RUN apt install -y libmysqlcppconn-dev
 
+# install gtest
+RUN apt install -y libgtest-dev
+
 # -----cache end-----
 COPY . .
 RUN rm -r ./zips
+ENV PROJECT_BACKEND_ROOT="/home/backend"
