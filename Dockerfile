@@ -65,6 +65,9 @@ RUN apt install -y libmysqlcppconn-dev
 # install gtest
 RUN apt install -y libgtest-dev
 
+# install tree
+RUN apt install -y tree
+
 # -----cache end-----
 COPY . .
 RUN rm -r ./zips
