@@ -41,8 +41,8 @@ RUN apt install -y libboost-all-dev
 
 # install jwt-cpp
 RUN apt install -y libssl-dev
+RUN git clone https://github.com/Thalhammer/jwt-cpp.git /tmp/jwt-cpp
 RUN apt install -y git cmake build-essential && \
-  git clone https://github.com/Thalhammer/jwt-cpp.git /tmp/jwt-cpp && \
   cd /tmp/jwt-cpp && mkdir build && cd build && \
   cmake .. && make -j8 && make install && \
   cd / && rm -rf /tmp/jwt-cpp
