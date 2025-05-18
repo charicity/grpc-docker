@@ -48,6 +48,7 @@ RUN apt install -y git cmake build-essential && \
   cd / && rm -rf /tmp/jwt-cpp
 
 # install clangd
+RUN apt update
 RUN apt install -y clangd 
 
 # install googleapis
@@ -67,6 +68,13 @@ RUN apt install -y libgtest-dev
 
 # install tree
 RUN apt install -y tree
+
+# install redis
+RUN git clone --depth=1 https://github.com/redis/hiredis /tmp/hiredis
+RUN cd /tmp/hiredis && mkdir -p build && cd build && \
+  cmake .. && make -j8 && make install && \
+  cd / && rm -rf /tmp/hiredis
+# RUN apt install -y libhiredis-dev
 
 # -----cache end-----
 COPY . .
